@@ -1,14 +1,16 @@
-# westagram-react
-
 # 10-React-Westagram-3
 
 # 팀원
 ## 10기 이지윤
-작업 현황 :
 ## 10기 이태성
-작업 현황 :
 ## 10기 김경배
-작업 현황 :
+
+## 사용한 기술(Front-end)
+- HTML / CSS
+- JavaScript
+- React (Class)
+- React-Router
+- Sass/Scss
 
 ## 깃 주의사항
 - commit 작업시 자신의 브랜치 확인하기
