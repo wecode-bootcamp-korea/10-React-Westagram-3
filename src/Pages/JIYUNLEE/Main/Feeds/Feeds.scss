@@ -106,7 +106,12 @@
         justify-content: space-between;
         margin-top: 4px;
         padding: 0 8px;
-        div svg {
+        img {
+          width: 24px;
+          height: 24px;
+          margin: 8px;
+        }
+        div img {
           width: 24px;
           height: 24px;
           margin: 8px;
