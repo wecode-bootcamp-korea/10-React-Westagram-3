@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 1280px;
+  max-height: 12000px;
+  margin-top: 53px;
+  margin-left: -10px;
+  background-color: #fafafa;
+  .mainContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 975px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}

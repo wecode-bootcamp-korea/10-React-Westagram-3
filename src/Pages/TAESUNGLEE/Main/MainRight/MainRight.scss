@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+.mainRight {
+  position: fixed;
+  top: 110px;
+  left: 814px;
+  width: 293px;
+  .flex {
+    display: flex;
+  }
+  .myAccount {
+    height: 56px;
+    .myAccountImgBox {
+      width: 66px;
+      height: 66px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      margin-right: 10px;
+      .myAccountImg {
+        width: 56px;
+        height: 56px;
+        border: 0;
+        border-radius: 70%;
+        object-fit: cover;
+      }
+    }
+    .flex {
+      display: flex;
+    }
+    .myAccountExplain {
+      justify-content: center;
+      flex-direction: column;
+      .font {
+        font-size: 14px;
+        color: #262626;
+      }
+      .mainSubFont {
+        font-size: 12px;
+        color: #8e8e8e;
+      }
+    }
+  }
+  .recommand {
+    width: 100%;
+    margin-top: 24px;
+    .recommandBox {
+      display: flex;
+      justify-content: space-between;
+      .mainFont {
+        font-size: 14px;
+        color: #8e8e8e;
+      }
+      .mainBold {
+        font-weight: 900;
+      }
+      .subFont {
+        font-size: 12px;
+        color: #262626;
+      }
+      .subBold {
+        font-weight: 600;
+      }
+      .flex {
+        display: flex;
+      }
+    }
+    .recommandAccountBox {
+      width: 100%;
+      height: 48px;
+      margin-top: 15px;
+      .recommandImgBox {
+        width: 42px;
+        height: 42px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+        .recommandImg {
+          width: 32px;
+          height: 32px;
+          border: 0;
+          border-radius: 70%;
+          object-fit: cover;
+        }
+      }
+      .flex {
+        display: flex;
+      }
+      .recommandAccount {
+        width: 100%;
+        justify-content: space-between;
+        .flex {
+          display: flex;
+        }
+        .recommandAccountExplain {
+          justify-content: center;
+          flex-direction: column;
+          .font {
+            font-size: 14px;
+            color: #262626;
+          }
+          .mainSubFont {
+            font-size: 12px;
+            color: #8e8e8e;
+          }
+        }
+        .flex {
+          display: flex;
+        }
+        .follow {
+          align-items: center;
+          .followButton {
+            font-size: 12px;
+            font-weight: 600;
+            color: #0095f6;
+          }
+          Button:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
