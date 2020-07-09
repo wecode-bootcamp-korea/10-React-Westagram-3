@@ -4,7 +4,7 @@ import "./MainRight.scss";
 class MainRight extends Component {
   render() {
     return (
-      <div className="mainRight">
+      <div className="MainRight">
         <div className="flex myAccount">
           <div className="myAccountImgBox">
             <img

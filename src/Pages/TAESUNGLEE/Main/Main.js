@@ -7,15 +7,15 @@ import "./Main.scss";
 class Main extends Component {
   render() {
     return (
-      <div>
+      <>
         <Nav />
-        <main className="main">
+        <main className="mainBox">
           <div className="mainContainer">
             <Feeds />
             <MainRight />
           </div>
         </main>
-      </div>
+      </>
     );
   }
 }

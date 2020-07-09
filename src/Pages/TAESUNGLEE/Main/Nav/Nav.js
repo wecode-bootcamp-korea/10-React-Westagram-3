@@ -4,7 +4,7 @@ import "./Nav.scss";
 class Nav extends Component {
   render() {
     return (
-      <nav className="nav">
+      <nav className="Nav">
         <div className="navContainer">
           <div className="leftLogo">
             <div>

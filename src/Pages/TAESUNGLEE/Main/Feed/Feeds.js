@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./Feed.scss";
+import "./Feeds.scss";
 
 class Feeds extends Component {
   render() {
     return (
-      <div className="feed">
+      <div className="Feeds">
         <header>
           <div className="profileImgBox">
             <img

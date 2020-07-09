@@ -1,16 +1,14 @@
-* {
-  box-sizing: border-box;
-}
-
-.feed {
+.Feeds {
   width: 614px;
   background-color: white;
   header {
-    width: 100%;
+    width: 99.6%;
     height: 60px;
     border: 1px solid #dbdbdb;
-    padding: 8px;
+    padding: 0;
     display: flex;
+    justify-content: center;
+    align-items: center;
     .profileImgBox {
       width: 42px;
       height: 42px;
@@ -129,9 +127,10 @@
       padding: 0 10px;
       border-top: 1px solid #dbdbdb;
       .comment {
-        width: 100%;
+        width: 99.8%;
         height: 100%;
         border: 0;
+        padding: 0;
         outline-color: #dbdbdb;
         outline-width: 0px;
       }
