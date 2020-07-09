@@ -3,15 +3,19 @@ import "./Login.scss";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-  goToSignup() {
+  goToMain = () => {
     this.props.history.push("/keyoungbaeMain");
-  }
+  };
+
   render() {
     return (
-      <main>
+      <main className="Login_KB">
         <div className="loginContanier">
           <div className="titleLogo">
-            <img alt="instagram  logo" src="/Images/logo_text.png" />
+            <img
+              alt="instagram  logo"
+              src="/Images/KEYOUNGBAEKIM/logo_text.png"
+            />
           </div>
           <div className="inputContainer">
             <div className="clickInputContainer">
@@ -27,7 +31,7 @@ class Login extends Component {
               />
             </div>
             <button
-              onClick={this.goToSignup.bind(this)}
+              onClick={this.goToMain}
               type="loginBtn"
               className="loginBtn"
             >
