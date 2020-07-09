@@ -11,7 +11,10 @@ class Login extends Component {
       <main>
         <div className="loginContanier">
           <div className="titleLogo">
-            <img alt="instagram  logo" src="/Images/logo_text.png" />
+            <img
+              alt="instagram  logo"
+              src="/Images/KEYOUNGBAEKIM/logo_text.png"
+            />
           </div>
           <div className="inputContainer">
             <div className="clickInputContainer">
