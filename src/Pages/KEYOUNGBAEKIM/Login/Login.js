@@ -3,9 +3,10 @@ import "./Login.scss";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-  goToSignup() {
+  goToMain = () => {
     this.props.history.push("/keyoungbaeMain");
-  }
+  };
+
   render() {
     return (
       <main className="Login_KB">
@@ -30,7 +31,7 @@ class Login extends Component {
               />
             </div>
             <button
-              onClick={this.goToSignup.bind(this)}
+              onClick={this.goToMain}
               type="loginBtn"
               className="loginBtn"
             >
