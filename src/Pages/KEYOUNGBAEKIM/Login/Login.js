@@ -8,7 +8,7 @@ class Login extends Component {
   }
   render() {
     return (
-      <main>
+      <main className="Login_KB">
         <div className="loginContanier">
           <div className="titleLogo">
             <img

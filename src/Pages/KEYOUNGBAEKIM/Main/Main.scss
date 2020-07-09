@@ -1,16 +1,18 @@
-main {
-  display: flex;
-  justify-content: center;
-  background-color: #fafafa;
-
-  .mainContainer {
-    width: 975px;
+.Main_KB {
+  main {
     display: flex;
-    margin-top: 90px;
-  }
-}
+    justify-content: center;
+    background-color: #fafafa;
 
-img {
-  width: 100%;
-  height: 100%;
+    .mainContainer {
+      width: 975px;
+      display: flex;
+      margin-top: 90px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
