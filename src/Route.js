@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import jiyunMain from "./Pages/JIYUNLEE/Main/Main";
-import jiyunLogin from "./Pages/JIYUNLEE/Login/Login";
+// import jiyunMain from "./Pages/JIYUNLEE/Main/Main";
+// import jiyunLogin from "./Pages/JIYUNLEE/Login/Login";
 import keyoungbaeMain from "./Pages/KEYOUNGBAEKIM/Main/Main";
 import keyoungbaeLogin from "./Pages/KEYOUNGBAEKIM/Login/Login";
 // import taesungMain from "./Pages/TAESUNGLEE/Main/Main";
@@ -12,8 +12,8 @@ class Routes extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route exact path="/jiyunLogin" component={jiyunLogin} />
-          <Route exact path="/jiyunMain" component={jiyunMain} />
+          {/* <Route exact path="/jiyunLogin" component={jiyunLogin} />
+          <Route exact path="/jiyunMain" component={jiyunMain} /> */}
           <Route exact path="/keyoungbaeLogin" component={keyoungbaeLogin} />
           <Route exact path="/keyoungbaeMain" component={keyoungbaeMain} />
           {/* <Route exact path="/taesungLogin" component={taesungLogin} />

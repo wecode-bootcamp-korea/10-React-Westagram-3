@@ -18,7 +18,7 @@ class Nav extends Component {
               className="fas searchInput"
               type="text"
               onfocus="focusNavSearch()"
-              placeholder="&#xf002; 검색"
+              placeholder="검색"
             />
           </label>
           <div className="navMenuIcon">

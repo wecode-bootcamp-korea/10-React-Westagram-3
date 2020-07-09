@@ -20,7 +20,7 @@ class MainRight extends Component {
           </div>
           <div class="recommendationContainer">
             <p class="recommendationTitle">회원님을 위한 추천</p>
-            <button class="recommendationBtn">모두 보기</button>
+            <p class="recommendationViewAll">모두 보기</p>
           </div>
           <div class="followContainer">
             <div class="followMemberContainer">
