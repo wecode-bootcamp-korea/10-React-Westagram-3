@@ -4,7 +4,7 @@ import "./Feeds.scss";
 class Feeds extends Component {
   render() {
     return (
-      <div className="feedsColumn">
+      <div className="feedsColumn_JY">
         <div className="feeds">
           <div>
             <div className="storyFrame">

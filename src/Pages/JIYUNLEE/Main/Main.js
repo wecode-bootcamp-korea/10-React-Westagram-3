@@ -7,7 +7,7 @@ import "./Main.scss";
 class Main extends Component {
   render() {
     return (
-      <div className="Main">
+      <div className="Main_JY">
         <Nav />
         <div className="mainContent">
           <Feeds />
@@ -17,4 +17,5 @@ class Main extends Component {
     );
   }
 }
+
 export default Main;

@@ -6,9 +6,10 @@ class Login extends Component {
   goToMain() {
     this.props.history.push("/jiyunMain");
   }
+
   render() {
     return (
-      <div class="Login">
+      <div class="Login_JY">
         <div className="box">
           <div className="box1">
             <img

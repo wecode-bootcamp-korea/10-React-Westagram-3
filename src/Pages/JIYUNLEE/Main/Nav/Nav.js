@@ -4,7 +4,7 @@ import "./Nav.scss";
 class Nav extends Component {
   render() {
     return (
-      <nav>
+      <nav className="Nav_JY">
         <div className="navContent">
           <div className="leftLogo">
             <img className="textlogo" src="/images/JIYUNLEE/logo_text.png" />

@@ -1,13 +1,7 @@
-/* main */
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.feedsColumn {
+.feedsColumn_JY {
   display: flex;
   flex-direction: column;
-
+  margin: 0;
   .feeds {
     display: flex;
     width: 614px;
@@ -22,6 +16,9 @@
       padding: 16px 0;
       border: 0.2px solid rgb(220, 220, 220);
       background-color: white;
+      ::-webkit-scrollbar {
+        display: none;
+      }
       .storyOverflow {
         display: flex;
         margin: 0 1px;
@@ -123,7 +120,6 @@
         .likes {
           display: flex;
           align-items: center;
-          margin-bottom: 5px;
           img {
             width: 20px;
             margin-right: 10px;
@@ -132,11 +128,11 @@
         }
         .feedContents {
           .texts {
-            margin-top: 0;
             .paragraph {
               display: inline-block;
               width: 540px;
               max-width: 400px;
+              margin: 0;
               line-height: 14px;
               overflow: hidden;
               text-overflow: ellipsis;
@@ -178,12 +174,12 @@
       }
       .comments {
         width: 613px;
+        display: flex;
         margin-top: 10px;
         border: 0.2px solid rgb(220, 223, 224);
         .createComment {
           display: flex;
           margin: 0 auto;
-          overflow-y: scroll;
           .inputComment {
             flex-shrink: 0;
             min-width: 543px;

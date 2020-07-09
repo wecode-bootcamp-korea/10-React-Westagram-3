@@ -1,10 +1,7 @@
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.mainRight {
+.MainRight_JY {
   width: 293px;
+  margin: 0;
+
   .fixRight {
     position: fixed;
     .rightProfile {
@@ -30,6 +27,9 @@
       width: 293px;
       margin: 20px 0;
       overflow: hidden;
+      ::-webkit-scrollbar {
+        display: none;
+      }
       .recommendTitle {
         width: 293px;
         height: 25px;
@@ -104,8 +104,4 @@
       }
     }
   }
-}
-
-::-webkit-scrollbar {
-  display: none;
 }
