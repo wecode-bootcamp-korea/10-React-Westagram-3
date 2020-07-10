@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import "./Feeds.scss";
 
 class Feeds extends Component {
+  constructor() {
+    super();
+    this.state = {
+      comment: "",
+    };
+  }
+  // handleEnterSubmit = (e) => {
+  //   if (this.canBeSubmitted() && e.keyCode === 13) {
+  //     console.log("ok!");
+  //   }
+  // };
+  canBeSubmitted() {
+    const { comment } = this.state;
+    return comment.length > 0;
+  }
   render() {
     return (
       <div className="feedsColumn_JY">
@@ -61,17 +76,18 @@ class Feeds extends Component {
             </div>
             <article>
               <div className="articleProfile">
-                <div className="idpic">
-                  <img src="/images/JIYUNLEE/me.jpg" />
+                <div className="idPic">
+                  <img alt="myProfile" src="/images/JIYUNLEE/me.jpg" />
                 </div>
-                <div className="idspan">
+                <div className="idSpan">
                   <span>
                     <strong>limosum91</strong>
                   </span>
                 </div>
-                <div className="idmore">
+                <div className="idMore">
                   <img
                     className="more"
+                    alt="more"
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                   />
                 </div>
@@ -134,45 +150,60 @@ class Feeds extends Component {
                     className="inputComment"
                     placeholder="댓글 달기..."
                   ></textarea>
-                  <button className="commentBtn" disabled>
-                    게시
-                  </button>
+                  <button className="commentBtn">게시</button>
                 </form>
               </div>
             </article>
 
             <article>
               <div className="articleProfile">
-                <div className="idpic">
-                  <img src="/images/JIYUNLEE/me.jpg" />
+                <div className="idPic">
+                  <img alt="myProfile" src="/images/JIYUNLEE/me.jpg" />
                 </div>
-                <div className="idspan">
+                <div className="idSpan">
                   <span>
                     <strong>limosum91</strong>
                   </span>
                 </div>
-                <div className="idmore">
+                <div className="idMore">
                   <img
                     className="more"
+                    alt="more"
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                   />
                 </div>
               </div>
               <div className="articlePictures">
-                <img src="/images/JIYUNLEE/tonyStark.png" />
+                <img alt="tonyStark" src="/images/JIYUNLEE/tonyStark.png" />
               </div>
               <div className="viewersBtn">
                 <div className="viewersLeftBtn">
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"></img>
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"></img>
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"></img>
+                  <img
+                    alt="like"
+                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                  ></img>
+                  <img
+                    alt="comment"
+                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"
+                  ></img>
+                  <img
+                    alt="share"
+                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"
+                  ></img>
                 </div>
-                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"></img>
+                <img
+                  alt="bookmark"
+                  src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"
+                ></img>
               </div>
 
               <div className="articleContent">
                 <div className="likes">
-                  <img className="likepic" src="/images/JIYUNLEE/tom.jpg" />
+                  <img
+                    className="likepic"
+                    alt="tom"
+                    src="/images/JIYUNLEE/tom.jpg"
+                  />
                   <span className="likeId">
                     <strong>tomholland2013</strong>
                   </span>
@@ -216,9 +247,7 @@ class Feeds extends Component {
                     className="inputComment"
                     placeholder="댓글 달기..."
                   ></textarea>
-                  <button className="commentBtn" disabled>
-                    게시
-                  </button>
+                  <button className="commentBtn">게시</button>
                 </form>
               </div>
             </article>

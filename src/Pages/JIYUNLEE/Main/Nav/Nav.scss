@@ -9,6 +9,7 @@
   border-bottom: 0.5px solid lightgrey;
   background-color: white;
   z-index: 10;
+
   .navContent {
     display: flex;
     width: 975px;
@@ -16,16 +17,20 @@
     padding: 0 20px;
     align-items: center;
     background-color: white;
+
     .leftLogo {
       flex: 1;
+
       .textlogo {
         width: 103px;
       }
     }
+
     .middleSearch {
       display: flex;
       flex: 1;
       justify-content: center;
+
       input {
         position: relative;
         width: 215px;
@@ -39,25 +44,31 @@
         border-radius: 3px;
         background-color: #fafafa;
       }
+
       input:focus {
         padding-left: 10px;
         text-align: left;
       }
     }
+
     .rightMenu {
       flex: 1;
+
       .rightMenuBtn {
         display: flex;
         float: right;
         margin-left: 15px;
+
         a {
           width: 22px;
           height: 22px;
           margin-left: 22px;
+
           svg {
             width: 22px;
             height: 22px;
           }
+
           img {
             width: 22px;
             height: 22px;

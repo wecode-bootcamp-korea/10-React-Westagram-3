@@ -10,39 +10,45 @@ class Login extends Component {
       password: "",
     };
   }
+
   handleEmailChange = (e) => {
     this.setState({ email: e.target.value });
   };
+
   handlePasswordChange = (e) => {
     this.setState({ password: e.target.value });
   };
+
   handleEnterLogin = (e) => {
     if (this.canBeSubmitted() && e.keyCode === 13) {
       this.goToMain();
     }
   };
+
   canBeSubmitted() {
     const { email, password } = this.state;
     return email.includes("@") && password.length > 5;
   }
+
   goToMain() {
-    {
-      console.log(this.state.email);
-    }
-    {
-      console.log(this.state.password);
-    }
+    console.log(this.state.email);
+    console.log(this.state.password);
     this.props.history.push("/jiyunMain");
   }
 
   render() {
     const isEnabled = this.canBeSubmitted();
+
     return (
       <div class="Login_JY">
         <div className="box">
           <div className="box1">
-            <img className="logo" src="/images/JIYUNLEE/logo_text.png" />
-            <form className="inputLogin">
+            <img
+              className="logo"
+              alt="logo"
+              src="/images/JIYUNLEE/logo_text.png"
+            />
+            <div className="inputLogin">
               <input
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
@@ -69,7 +75,7 @@ class Login extends Component {
               >
                 로그인
               </button>
-            </form>
+            </div>
             <div className="or">
               <hr className="orLine" />
               <span>또는</span>
@@ -77,7 +83,7 @@ class Login extends Component {
             </div>
             <div className="loginIssue">
               <div className="faceBook">
-                <img src="/images/JIYUNLEE/facebook.jpg" />
+                <img alt="facebook" src="/images/JIYUNLEE/facebook.jpg" />
                 <span>
                   <strong>Facebook</strong>으로 로그인
                 </span>
@@ -89,7 +95,7 @@ class Login extends Component {
             <p>
               계정이 없으신가요?
               <strong>
-                <a href="#" className="joinUs">
+                <a href="/jiyunMain" className="joinUs">
                   가입하기
                 </a>
               </strong>
@@ -102,10 +108,12 @@ class Login extends Component {
             <div className="imgBox">
               <img
                 className="downloadLink"
+                alt="downloadIos"
                 src="/images/JIYUNLEE/downloadIos.png"
               />
               <img
                 className="downloadLink"
+                alt="downloadAndroid"
                 src="/images/JIYUNLEE/downloadAndr.png"
               />
             </div>
