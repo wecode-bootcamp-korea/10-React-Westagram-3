@@ -9,7 +9,7 @@ class Main extends Component {
     return (
       <>
         <Nav />
-        <main className="mainBox">
+        <main className="Main_TS">
           <div className="mainContainer">
             <Feeds />
             <MainRight />

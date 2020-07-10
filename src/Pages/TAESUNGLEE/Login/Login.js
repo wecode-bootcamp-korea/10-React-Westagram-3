@@ -5,7 +5,7 @@ import "./Login.scss";
 class Login extends Component {
   render() {
     return (
-      <div className="Login_taesung">
+      <div className="Login_TS">
         <div className="idBoxContainer">
           <div className="containerImg">
             <img alt="logo" src="/images/LEETAESUNG/logo_text.png" />
