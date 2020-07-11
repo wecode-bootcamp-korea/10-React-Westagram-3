@@ -125,7 +125,7 @@ class Feeds extends Component {
                 <div className="idMore">
                   <img
                     className="more"
-                    alt="mre"
+                    alt=""
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                   />
                 </div>
@@ -203,7 +203,7 @@ class Feeds extends Component {
                     onKeyPress={handleEnterSubmit}
                   ></textarea>
                   <button
-                    className={isEabled ? "activate" : "notyet"}
+                    className={isEabled ? "activateBtn" : "btnNotAvailable"}
                     disabled={!this.state.comment}
                     onClick={handleClickSubmit}
                   >

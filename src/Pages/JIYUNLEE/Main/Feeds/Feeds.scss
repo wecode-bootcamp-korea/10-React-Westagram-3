@@ -217,7 +217,6 @@
 
         .createComment {
           display: flex;
-          // margin: 0 auto;
 
           .inputComment {
             flex-shrink: 0;
@@ -235,14 +234,14 @@
             font-family: Arial, Helvetica, sans-serif;
           }
 
-          .activate {
+          .activateBtn {
             flex-grow: 1;
             color: skyblue;
             border-style: none;
             outline: none;
             background-color: white;
           }
-          .notyet {
+          .btnNotAvailable {
             flex-grow: 1;
             color: lightgrey;
             border-style: none;
