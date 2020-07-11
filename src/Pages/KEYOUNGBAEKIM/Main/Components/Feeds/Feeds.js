@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Feeds.scss";
 
 class Feeds extends Component {
+  clickFromHeart = () => {};
   render() {
     return (
       <article className="Feeds">
@@ -95,7 +96,10 @@ class Feeds extends Component {
           <section className="feedsComment">
             <div className="commentBtnList">
               <div className="commentBtnContatiner">
-                <button className="commentIconBtn">
+                <button
+                  className="commentIconBtn"
+                  style={{ cursor: "pointer" }}
+                >
                   <img
                     id="heartImg"
                     alt="하트"

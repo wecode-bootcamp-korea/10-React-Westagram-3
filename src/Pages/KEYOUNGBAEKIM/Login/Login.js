@@ -7,6 +7,24 @@ class Login extends Component {
     this.props.history.push("/keyoungbaeMain");
   };
 
+  state = {
+    email: "",
+    password: "",
+  };
+
+  onChange = (e) => {
+    let emailInput = e.target.name;
+    let passwordInput = {
+      ...this.state,
+    };
+
+    emailInput === "email"
+      ? (passwordInput.email = e.target.value)
+      : (passwordInput.password = e.target.value);
+
+    this.setState(passwordInput);
+  };
+
   render() {
     return (
       <main className="Login_KB">
@@ -18,14 +36,18 @@ class Login extends Component {
             />
           </div>
           <div className="inputContainer">
-            <div className="clickInputContainer">
+            <div className="clickInputContainer" onChange={this.onChange}>
               <input
                 className="loginInput"
+                name="email"
+                value={this.state.email}
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
               />
               <input
                 className="loginInput"
+                name="password"
+                value={this.state.password}
                 type="password"
                 placeholder="비밀번호"
               />
@@ -33,6 +55,18 @@ class Login extends Component {
             <button
               onClick={this.goToMain}
               type="loginBtn"
+              style={{
+                backgroundColor:
+                  this.state.email.indexOf("@") !== -1 &&
+                  this.state.password.length >= 5
+                    ? "#0095F6"
+                    : "#B2DFFC",
+                pointerEvents:
+                  this.state.email.indexOf("@") !== -1 &&
+                  this.state.password.length >= 5
+                    ? "auto"
+                    : "none",
+              }}
               className="loginBtn"
             >
               로그인
