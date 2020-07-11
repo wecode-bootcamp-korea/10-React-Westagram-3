@@ -152,6 +152,7 @@
         }
 
         .feedContents {
+          margin: 10px 0 0 0;
           .texts {
             .paragraph {
               display: inline-block;
@@ -169,7 +170,7 @@
               padding: 0;
               outline: none;
               border-style: none;
-              background-color: #fafafa;
+              background-color: white;
             }
           }
         }
@@ -184,14 +185,18 @@
 
             li {
               display: flex;
+              justify-content: space-between;
               align-items: center;
               word-break: break-all;
-              margin-top: 10px;
+              margin-top: 3px;
 
               span {
                 margin-left: 5px;
               }
-
+              .commentLikes {
+                width: 12px;
+                height: 12px;
+              }
               .deleteBtn {
                 width: 30px;
                 border-style: none;
@@ -212,7 +217,7 @@
 
         .createComment {
           display: flex;
-          margin: 0 auto;
+          // margin: 0 auto;
 
           .inputComment {
             flex-shrink: 0;
@@ -220,6 +225,7 @@
             max-width: 543px;
             min-height: 56px;
             max-height: 80px;
+            margin-right: 20px;
             padding-top: 20px;
             padding-left: 20px;
             font-size: 12px;
@@ -229,12 +235,19 @@
             font-family: Arial, Helvetica, sans-serif;
           }
 
-          .commentBtn {
+          .activate {
             flex-grow: 1;
-            float: right;
-            color: lightblue;
+            color: skyblue;
             border-style: none;
             outline: none;
+            background-color: white;
+          }
+          .notyet {
+            flex-grow: 1;
+            color: lightgrey;
+            border-style: none;
+            outline: none;
+            background-color: white;
           }
         }
       }

@@ -5,19 +5,57 @@ class Feeds extends Component {
   constructor() {
     super();
     this.state = {
+      commentsList: ["아하하 미쳐버릴 거야", "리액트 멘탈 파괴"],
       comment: "",
     };
   }
-  // handleEnterSubmit = (e) => {
-  //   if (this.canBeSubmitted() && e.keyCode === 13) {
-  //     console.log("ok!");
-  //   }
-  // };
+
+  handleCommentChange = (e) => {
+    this.setState({ comment: e.target.value });
+  };
+
+  handleClickSubmit = () => {
+    this.setState({
+      commentsList: this.state.commentsList.concat(this.state.comment),
+      comment: "",
+    });
+  };
+
+  handleEnterSubmit = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      this.setState({
+        commentsList: this.state.commentsList.concat(this.state.comment),
+        comment: "",
+      });
+    }
+  };
+
   canBeSubmitted() {
     const { comment } = this.state;
     return comment.length > 0;
   }
+
   render() {
+    const { handleCommentChange, handleClickSubmit, handleEnterSubmit } = this;
+    const isEabled = this.canBeSubmitted();
+
+    const commentBox = this.state.commentsList.map((c) => {
+      return (
+        <li>
+          <div>
+            <strong>limosum91 </strong>
+            <span>{c}</span>
+          </div>
+          <img
+            className="commentLikes"
+            alt=""
+            src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+          ></img>
+        </li>
+      );
+    });
+
     return (
       <div className="feedsColumn_JY">
         <div className="feeds">
@@ -26,49 +64,49 @@ class Feeds extends Component {
               <div className="storyOverflow">
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/avengers.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/avengers.jpg" />
                     <div className="storyProfile">avengers</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/marvel.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/marvel.jpg" />
                     <div className="storyProfile">marvel</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/robert.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/robert.jpg" />
                     <div className="storyProfile">robertdowneyjr</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/tom.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/tom.jpg" />
                     <div className="storyProfile">tomholland2013</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/chris.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/chris.jpg" />
                     <div className="storyProfile">chrishemsworth</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/scarlett.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/scarlett.jpg" />
                     <div className="storyProfile">scarlett.johansson.fc</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/me.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/me.jpg" />
                     <div className="storyProfile">limosum91</div>
                   </div>
                 </div>
                 <div className="eachStoryBox">
                   <div className="borders">
-                    <img src="/images/JIYUNLEE/wecode.jpg" />
+                    <img alt="" src="/images/JIYUNLEE/wecode.jpg" />
                     <div className="storyProfile">wecode_bootcamp</div>
                   </div>
                 </div>
@@ -77,7 +115,7 @@ class Feeds extends Component {
             <article>
               <div className="articleProfile">
                 <div className="idPic">
-                  <img alt="myProfile" src="/images/JIYUNLEE/me.jpg" />
+                  <img alt="" src="/images/JIYUNLEE/me.jpg" />
                 </div>
                 <div className="idSpan">
                   <span>
@@ -87,112 +125,31 @@ class Feeds extends Component {
                 <div className="idMore">
                   <img
                     className="more"
-                    alt="more"
+                    alt="mre"
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
                   />
                 </div>
               </div>
               <div className="articlePictures">
-                <img src="/images/JIYUNLEE/spiderman.jpeg" />
-              </div>
-              <div className="viewersBtn">
-                <div className="viewersLeftBtn">
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"></img>
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"></img>
-                  <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"></img>
-                </div>
-                <img src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"></img>
-              </div>
-
-              <div className="articleContent">
-                <div className="likes">
-                  <img className="likepic" src="/images/JIYUNLEE/tom.jpg" />
-                  <span className="likeId">
-                    <strong>tomholland2013</strong>
-                  </span>
-                  <span>
-                    님 <strong>외 3명</strong>이 좋아합니다.
-                  </span>
-                </div>
-                <div className="feedContents">
-                  <p>
-                    <strong>limosum91</strong>
-                  </p>
-                  <div className="texts">
-                    <p className="notOverFlow"></p>
-                    <p className="paragraph">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Phasellus imperdiet, nulla et dictum interdum, nisi lorem
-                      egestas vitae scelerisque enim ligula venenatis dolor.
-                      Maecenas nisl est, ultrices nec congue eget, auctor vitae
-                      massa. Fusce luctus vestibulum augue ut aliquet. Nunc
-                      sagittis dictum nisi, sed ullamcorper ipsum dignissim ac.
-                      In at libero sed nunc venenatis imperdiet sed ornare
-                      turpis. Donec vitae dui eget tellus gravida venenatis.
-                      Integer fringilla congue eros non fermentum. Sed dapibus
-                      pulvinar nibh tempor porta.
-                    </p>
-                    <button className="moreBtn">더 보기</button>
-                  </div>
-                </div>
-                <div className="commentsList">
-                  <ul className="commentsFrame">
-                    <li className="firstC">
-                      <strong>limosum91</strong>
-                      <span>피드 댓글</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="comments">
-                <form className="createComment" autocomplete="off">
-                  <textarea
-                    className="inputComment"
-                    placeholder="댓글 달기..."
-                  ></textarea>
-                  <button className="commentBtn">게시</button>
-                </form>
-              </div>
-            </article>
-
-            <article>
-              <div className="articleProfile">
-                <div className="idPic">
-                  <img alt="myProfile" src="/images/JIYUNLEE/me.jpg" />
-                </div>
-                <div className="idSpan">
-                  <span>
-                    <strong>limosum91</strong>
-                  </span>
-                </div>
-                <div className="idMore">
-                  <img
-                    className="more"
-                    alt="more"
-                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/more.png"
-                  />
-                </div>
-              </div>
-              <div className="articlePictures">
-                <img alt="tonyStark" src="/images/JIYUNLEE/tonyStark.png" />
+                <img alt="" src="/images/JIYUNLEE/spiderman.jpeg" />
               </div>
               <div className="viewersBtn">
                 <div className="viewersLeftBtn">
                   <img
-                    alt="like"
+                    alt=""
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
                   ></img>
                   <img
-                    alt="comment"
+                    alt=""
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/comment.png"
                   ></img>
                   <img
-                    alt="share"
+                    alt=""
                     src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/share.png"
                   ></img>
                 </div>
                 <img
-                  alt="bookmark"
+                  alt=""
                   src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/bookmark.png"
                 ></img>
               </div>
@@ -201,7 +158,7 @@ class Feeds extends Component {
                 <div className="likes">
                   <img
                     className="likepic"
-                    alt="tom"
+                    alt=""
                     src="/images/JIYUNLEE/tom.jpg"
                   />
                   <span className="likeId">
@@ -212,12 +169,12 @@ class Feeds extends Component {
                   </span>
                 </div>
                 <div className="feedContents">
-                  <p>
+                  <span>
                     <strong>limosum91</strong>
-                  </p>
+                  </span>
                   <div className="texts">
-                    <p className="notOverFlow"></p>
-                    <p className="paragraph">
+                    <span className="notOverFlow"></span>
+                    <span className="paragraph">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Phasellus imperdiet, nulla et dictum interdum, nisi lorem
                       egestas vitae scelerisque enim ligula venenatis dolor.
@@ -228,27 +185,31 @@ class Feeds extends Component {
                       turpis. Donec vitae dui eget tellus gravida venenatis.
                       Integer fringilla congue eros non fermentum. Sed dapibus
                       pulvinar nibh tempor porta.
-                    </p>
+                    </span>
                     <button className="moreBtn">더 보기</button>
                   </div>
                 </div>
                 <div className="commentsList">
-                  <ul className="commentsFrame">
-                    <li className="firstC">
-                      <strong>limosum91</strong>
-                      <span>피드 댓글</span>
-                    </li>
-                  </ul>
+                  <ul className="commentsFrame">{commentBox}</ul>
                 </div>
               </div>
               <div className="comments">
-                <form className="createComment" autocomplete="off">
+                <div className="createComment" autoComplete="off">
                   <textarea
                     className="inputComment"
                     placeholder="댓글 달기..."
+                    value={this.state.comment}
+                    onChange={handleCommentChange}
+                    onKeyPress={handleEnterSubmit}
                   ></textarea>
-                  <button className="commentBtn">게시</button>
-                </form>
+                  <button
+                    className={isEabled ? "activate" : "notyet"}
+                    disabled={!this.state.comment}
+                    onClick={handleClickSubmit}
+                  >
+                    게시
+                  </button>
+                </div>
               </div>
             </article>
           </div>

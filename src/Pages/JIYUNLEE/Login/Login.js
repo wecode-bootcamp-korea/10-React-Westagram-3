@@ -30,10 +30,17 @@ class Login extends Component {
     return email.includes("@") && password.length > 5;
   }
 
+  correctInfo() {
+    const { email, password } = this.state;
+    return email === "admin@" && password === "123456";
+  }
+
   goToMain() {
     console.log(this.state.email);
     console.log(this.state.password);
-    this.props.history.push("/jiyunMain");
+    this.correctInfo()
+      ? this.props.history.push("/jiyunMain")
+      : alert("아이디와 비밀번호를 확인해주세요");
   }
 
   render() {
@@ -55,7 +62,7 @@ class Login extends Component {
                 value={this.state.email}
                 onChange={this.handleEmailChange}
                 onKeyUp={this.handleEnterLogin}
-                autocomplete="off"
+                autoComplete="off"
               />
               <input
                 type="password"
