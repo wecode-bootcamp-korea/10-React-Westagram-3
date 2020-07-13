@@ -175,10 +175,10 @@
           }
         }
 
-        .commentsList {
+        .showComments {
           list-style: none;
 
-          .commentsFrame {
+          .commentsList {
             margin: 0;
             padding-inline-start: 0;
             list-style: none;
@@ -196,13 +196,14 @@
               .commentLikes {
                 width: 12px;
                 height: 12px;
+                margin: 2px;
               }
-              .deleteBtn {
-                width: 30px;
+              .commentDelete {
+                width: 12px;
+                margin: 2px;
+
                 border-style: none;
-                text-align: right;
                 outline: none;
-                color: rgb(192, 192, 192);
               }
             }
           }

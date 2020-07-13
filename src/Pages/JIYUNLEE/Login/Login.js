@@ -12,39 +12,35 @@ class Login extends Component {
   }
 
   handleEmailChange = (e) => {
-    this.setState({ email: e.target.value });
+    this.setState({
+      email: e.target.value,
+    });
   };
 
   handlePasswordChange = (e) => {
-    this.setState({ password: e.target.value });
+    this.setState({
+      password: e.target.value,
+    });
   };
 
   handleEnterLogin = (e) => {
-    if (this.canBeSubmitted() && e.keyCode === 13) {
+    if (e.keyCode === 13) {
       this.goToMain();
     }
   };
 
-  canBeSubmitted() {
-    const { email, password } = this.state;
-    return email.includes("@") && password.length > 5;
-  }
-
-  correctInfo() {
-    const { email, password } = this.state;
-    return email === "admin@" && password === "123456";
-  }
-
   goToMain() {
     console.log(this.state.email);
     console.log(this.state.password);
-    this.correctInfo()
+    const { email, password } = this.state;
+    email === "admin@" && password === "123456"
       ? this.props.history.push("/jiyunMain")
       : alert("아이디와 비밀번호를 확인해주세요");
   }
 
   render() {
-    const isEnabled = this.canBeSubmitted();
+    const { email, password } = this.state;
+    const isEnabled = email.includes("@") && password.length > 5;
 
     return (
       <div class="Login_JY">
@@ -66,7 +62,6 @@ class Login extends Component {
               />
               <input
                 type="password"
-                id="inputpw"
                 placeholder="비밀번호"
                 value={this.state.password}
                 onChange={this.handlePasswordChange}

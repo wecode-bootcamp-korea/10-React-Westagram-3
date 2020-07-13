@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Nav from "./Nav/Nav";
-import Feeds from "./Feeds/Feeds";
 import MainRight from "./MainRight/MainRight";
 import "./Main.scss";
+import Feeds from "./Feeds/Feeds";
 
 class Main extends Component {
   render() {
