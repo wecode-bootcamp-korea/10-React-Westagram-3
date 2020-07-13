@@ -7,6 +7,7 @@ class Login extends React.Component {
     this.state = {
       email: "",
       password: "",
+      ready: false,
     };
   }
 
@@ -15,7 +16,13 @@ class Login extends React.Component {
   };
 
   handlePasswordChange = (event) => {
-    this.setState({ password: event.target.value });
+    this.setState({
+      password: event.target.value,
+      ready:
+        this.state.password.length > 5 && this.state.email.includes("@")
+          ? true
+          : false,
+    });
   };
 
   getColsoleValue = () => {
@@ -49,14 +56,8 @@ class Login extends React.Component {
           onChange={this.handlePasswordChange}
         />
         <button
-          className="loginbutton"
+          className={this.state.ready ? "loginbutton-blue " : "loginbutton"}
           onClick={this.getColsoleValue}
-          style={{
-            backgroundColor:
-              this.state.email.includes("@") && this.state.password.length > 5
-                ? "rgba(0, 149, 246, 1)"
-                : "",
-          }}
         >
           로그인
         </button>
