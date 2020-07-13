@@ -4,16 +4,6 @@
   height: 19891.4px;
   margin-top: 20px;
 
-  ul {
-    margin: 0;
-    padding: 0;
-    display: flex;
-
-    li {
-      padding: 7px;
-    }
-  }
-
   .profile-box {
     display: flex;
     justify-content: space-around;
@@ -26,6 +16,16 @@
     padding: 13px 0;
     width: 612px;
     height: 118px;
+
+    .profile-box-ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+
+      .profile-box-li {
+        padding: 7px;
+      }
+    }
 
     .profile-box-pic {
       border-radius: 50%;
@@ -139,6 +139,11 @@
       padding-left: 16px;
       padding-bottom: 10px;
       border-bottom: 1px solid #dbdbdb;
+
+      ul {
+        padding: 0px;
+        margin: 0px;
+      }
     }
     .reply-input {
       width: 614px;
