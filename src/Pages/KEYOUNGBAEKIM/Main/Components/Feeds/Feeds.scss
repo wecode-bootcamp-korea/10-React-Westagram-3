@@ -115,6 +115,7 @@
           }
 
           .commentIconBtn {
+            cursor: pointer;
             border: 0;
             outline: 0;
             padding: 0;
@@ -157,13 +158,14 @@
           display: flex;
           flex-direction: column;
 
-          div {
-            display: flex;
-            margin: 2px 0;
-          }
-
-          div p {
-            margin: 0 5px;
+          .removeBtn {
+            // width: 100%;
+            height: 100%;
+            float: right;
+            border: none;
+            // outline: none;
+            background-color: #00ff0000;
+            cursor: pointer;
           }
         }
 
@@ -192,7 +194,7 @@
         float: right;
         border: none;
         background-color: #00ff0000;
-        color: #b2dffc;
+        color: #0095f6;
         font-weight: bold;
         font-size: 14px;
         cursor: pointer;

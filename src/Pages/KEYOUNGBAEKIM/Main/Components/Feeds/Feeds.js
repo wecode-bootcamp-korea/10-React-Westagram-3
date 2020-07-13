@@ -2,8 +2,97 @@ import React, { Component } from "react";
 import "./Feeds.scss";
 
 class Feeds extends Component {
-  clickFromHeart = () => {};
+  constructor() {
+    super();
+
+    this.id = 3;
+    this.nickname = "rudqo_723";
+    this.state = {
+      heart: true,
+      src:
+        "https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png",
+      input: "",
+      todos: [
+        { nickname: "zlatan_ibrah...", text: "good!", id: 1 },
+        {
+          nickname: "giffertliwang",
+          text: "predictions don't do that, don't give me hope",
+          id: 2,
+        },
+        { nickname: "jeedory", text: "🌪🌪", id: 3 },
+      ],
+    };
+  }
+
+  onChange = (e) => {
+    this.setState({
+      input: e.target.value,
+      nickname: "rudqo_723",
+    });
+  };
+
+  onCreate = () => {
+    const { input, todos } = this.state;
+    if (input) {
+      this.setState({
+        input: "",
+        todos: todos.concat({
+          id: this.id++,
+          text: input,
+          nickname: this.nickname,
+        }),
+      });
+    }
+  };
+
+  onKeyPress = (e) => {
+    if (e.key === "Enter") {
+      this.onCreate();
+    }
+  };
+
+  onRemove = (id) => {
+    const { todos } = this.state;
+
+    this.setState({
+      todos: todos.filter((todo) => todo.id !== id),
+    });
+  };
+
+  handleHeartClick = () => {
+    let { heart } = this.state;
+
+    heart === true
+      ? this.setState({
+          src: "Images/KEYOUNGBAEKIM/heart.png",
+          heart: false,
+        })
+      : this.setState({
+          src:
+            "https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png",
+          heart: true,
+        });
+  };
+
   render() {
+    const { input, todos } = this.state;
+    const { onChange, onCreate, onKeyPress, onRemove, handleHeartClick } = this;
+
+    const todoList = todos.map(({ text, nickname }) => (
+      <p className="normalText">
+        <strong>{nickname + " "}</strong>
+        {text}
+        {nickname === "rudqo_723" ? (
+          <button className="removeBtn" onClick={onRemove}>
+            🗑
+          </button>
+        ) : (
+          <></>
+        )}
+      </p>
+    ));
+
+    // const { onCreate, onKeyPress } = this;
     return (
       <article className="Feeds">
         <div className="story">
@@ -96,14 +185,12 @@ class Feeds extends Component {
           <section className="feedsComment">
             <div className="commentBtnList">
               <div className="commentBtnContatiner">
-                <button
-                  className="commentIconBtn"
-                  style={{ cursor: "pointer" }}
-                >
+                <button className="commentIconBtn">
                   <img
                     id="heartImg"
                     alt="하트"
-                    src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+                    src={this.state.src}
+                    onClick={handleHeartClick}
                   />
                 </button>
               </div>
@@ -140,14 +227,7 @@ class Feeds extends Component {
                 <strong>spursoffical</strong> 🏴󠁧󠁢󠁥󠁮󠁧󠁿 𝗛𝗞𝟭𝟬 x 𝗦𝗕𝟮𝟯 🇳🇱
               </p>
               <p className="silverText">댓글 108개 모두 보기</p>
-              <p className="normalText">
-                <strong>giffertliwang </strong>@followforfootballpredictions
-                don't do that, don't give me hope
-              </p>
-              <p className="normalText">
-                <strong>jeedory </strong>🌪🌪
-              </p>
-              <div className="myCommentList"></div>
+              <div className="myCommentList">{todoList}</div>
             </div>
           </section>
           <section className="writeComment">
@@ -155,9 +235,17 @@ class Feeds extends Component {
               className="commentInput"
               name="inputWriteComment"
               type="text"
+              value={input}
+              onKeyPress={onKeyPress}
+              onChange={onChange}
               placeholder="댓글 달기..."
             />
-            <button className="commentBtn" name="inputSubmitBtn" type="submit">
+            <button
+              className="commentBtn"
+              name="inputSubmitBtn"
+              type="submit"
+              onClick={onCreate}
+            >
               게시
             </button>
           </section>
