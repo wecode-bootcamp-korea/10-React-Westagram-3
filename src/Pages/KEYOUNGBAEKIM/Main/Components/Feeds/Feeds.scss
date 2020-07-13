@@ -142,16 +142,16 @@
         display: flex;
         flex-direction: column;
         font-size: 14px;
-        margin: 8px 16px;
+        margin: 4px 16px;
 
         h4 {
           font-size: 16px;
-          margin: 8px 0;
+          margin: 4px 0;
         }
 
         p {
           font-size: 14px;
-          margin: 4px 0;
+          margin: 2px 0;
         }
 
         .myCommentList {
@@ -189,12 +189,23 @@
         margin-left: 16px;
       }
 
-      .commentBtn {
+      .activeCommentBtn {
         width: 60px;
         float: right;
         border: none;
         background-color: #00ff0000;
         color: #0095f6;
+        font-weight: bold;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      .disableCommentBtn {
+        width: 60px;
+        float: right;
+        border: none;
+        background-color: #00ff0000;
+        color: #b2dffc;
         font-weight: bold;
         font-size: 14px;
         cursor: pointer;

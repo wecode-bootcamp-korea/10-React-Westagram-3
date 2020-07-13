@@ -74,15 +74,9 @@ class Feeds extends Component {
       <p className="normalText">
         <strong>{nickname + " "}</strong>
         {text}
-        {nickname === "rudqo_723" ? (
-          <button className="removeBtn">🗑</button>
-        ) : (
-          <></>
-        )}
       </p>
     ));
 
-    // const { onCreate, onKeyPress } = this;
     return (
       <article className="Feeds">
         <div className="story">
@@ -231,7 +225,7 @@ class Feeds extends Component {
               placeholder="댓글 달기..."
             />
             <button
-              className="commentBtn"
+              className={input ? "activeCommentBtn" : "disableCommentBtn"}
               name="inputSubmitBtn"
               type="submit"
               onClick={onCreate}

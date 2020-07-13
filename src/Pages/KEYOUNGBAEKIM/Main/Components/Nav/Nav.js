@@ -2,6 +2,22 @@ import React, { Component } from "react";
 import "./Nav.scss";
 
 class Nav extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      focus: true,
+    };
+  }
+
+  onFocus = () => {
+    this.setState({ focus: false });
+  };
+
+  onBlur = () => {
+    this.setState({ focus: true });
+  };
+
   render() {
     return (
       <nav className="Nav">
@@ -14,11 +30,19 @@ class Nav extends Component {
             />
           </div>
           <label className="navSearch">
-            <div className="searchIconContainer"></div>
+            <div className="searchIconContainer">
+              <img
+                className="serachImg"
+                alt="search"
+                src="/Images/KEYOUNGBAEKIM/search2.png"
+              />
+            </div>
             <input
-              className="fas searchInput"
+              // className="searchInput"
+              className={this.state.focus ? "searchInput" : "searchInputFocus"}
               type="text"
-              // onfocus="focusNavSearch()"
+              onBlur={this.onBlur}
+              onFocus={this.onFocus}
               placeholder="검색"
             />
           </label>
