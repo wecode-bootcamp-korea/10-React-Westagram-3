@@ -24,13 +24,6 @@ class Feeds extends Component {
     };
   }
 
-  onChange = (e) => {
-    this.setState({
-      input: e.target.value,
-      nickname: "rudqo_723",
-    });
-  };
-
   onCreate = () => {
     const { input, todos } = this.state;
     if (input) {
@@ -45,21 +38,20 @@ class Feeds extends Component {
     }
   };
 
+  onChange = (e) => {
+    this.setState({
+      input: e.target.value,
+      nickname: "rudqo_723",
+    });
+  };
+
   onKeyPress = (e) => {
     if (e.key === "Enter") {
       this.onCreate();
     }
   };
 
-  onRemove = (id) => {
-    const { todos } = this.state;
-
-    this.setState({
-      todos: todos.filter((todo) => todo.id !== id),
-    });
-  };
-
-  handleHeartClick = () => {
+  onHeartClick = () => {
     let { heart } = this.state;
 
     heart === true
@@ -76,16 +68,14 @@ class Feeds extends Component {
 
   render() {
     const { input, todos } = this.state;
-    const { onChange, onCreate, onKeyPress, onRemove, handleHeartClick } = this;
+    const { onChange, onCreate, onKeyPress, onHeartClick } = this;
 
     const todoList = todos.map(({ text, nickname }) => (
       <p className="normalText">
         <strong>{nickname + " "}</strong>
         {text}
         {nickname === "rudqo_723" ? (
-          <button className="removeBtn" onClick={onRemove}>
-            🗑
-          </button>
+          <button className="removeBtn">🗑</button>
         ) : (
           <></>
         )}
@@ -190,7 +180,7 @@ class Feeds extends Component {
                     id="heartImg"
                     alt="하트"
                     src={this.state.src}
-                    onClick={handleHeartClick}
+                    onClick={onHeartClick}
                   />
                 </button>
               </div>
