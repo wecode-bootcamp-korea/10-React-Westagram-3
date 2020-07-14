@@ -5,22 +5,42 @@ class Feeds extends React.Component {
   constructor() {
     super();
     this.state = {
-      Reply: [],
-      addReply: "",
+      myName: "위코드",
+      newReply: "",
+      replies: [
+        {
+          author: "엘비",
+          text: "hihi",
+        },
+        {
+          author: "민귤",
+          text: "어려워",
+        },
+        {
+          author: "너드",
+          text: "쉬워",
+        },
+      ],
     };
   }
 
   textChange = (event) => {
     // input 요소의 onChange 이벤트 핸들러
     this.setState({
-      addReply: event.target.value,
+      newReply: event.target.value,
     });
   };
 
   add = () => {
     // Button 요소의 onClick 이벤트 핸들러
+    let arr = this.state.replies;
+    arr.push({
+      author: this.state.myName,
+      text: this.state.newReply,
+    });
+
     this.setState({
-      Reply: this.state.Reply.concat(this.state.addReply),
+      replies: arr,
     });
   };
 
@@ -31,10 +51,6 @@ class Feeds extends React.Component {
   };
 
   render() {
-    const textArea = this.state.Reply.map((addReply, index) => (
-      <li key={index}>{addReply}</li>
-    ));
-
     return (
       <div className="Feeds_MK">
         <div className="profile-box">
@@ -165,13 +181,14 @@ class Feeds extends React.Component {
               &nbsp;안녕하세요
             </div>
             <div className="reply">
-              <div className="reply-box">
-                <span>
-                  <b>hohohoho</b>
-                </span>
-                &nbsp;안녕쌉싸리~ 😂
-              </div>
-              <ul>{textArea}</ul>
+              <ul className="reply-box">
+                {this.state.replies.map((el) => (
+                  <li>
+                    <strong>{el.author}</strong>
+                    {el.text}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="reply-input">
