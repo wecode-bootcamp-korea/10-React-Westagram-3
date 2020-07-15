@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Feeds.scss";
-import Feed from "./Feed";
+import FirstFeed from "./FirstFeed";
+import SecondFeed from "./SecondFeed";
 
 class Feeds extends Component {
   render() {
@@ -60,8 +61,8 @@ class Feeds extends Component {
                 </div>
               </div>
             </div>
-            <Feed />
-            <Feed />
+            <FirstFeed />
+            <SecondFeed />
           </div>
         </div>
       </div>

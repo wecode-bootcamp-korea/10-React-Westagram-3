@@ -24,6 +24,7 @@ class Feed extends Component {
       id: id + 1,
       commentsList: [...commentsList, { id: id, text: textarea }],
       textarea: "",
+      redHeart: false,
     });
   };
 
@@ -35,6 +36,10 @@ class Feed extends Component {
 
   handleClickSubmit = () => {
     this.handleCreateComment();
+  };
+
+  handleChangeLikes = (e) => {
+    e.target.setAttribute("src", "/Images/JIYUNLEE/redheart.gif");
   };
 
   handleRemoveComent = (e) => {
@@ -53,6 +58,7 @@ class Feed extends Component {
       handleClickSubmit,
       handleEnterSubmit,
       handleRemoveComent,
+      handleChangeLikes,
     } = this;
     const isEnabled = this.state.textarea.length > 0;
 
@@ -83,6 +89,7 @@ class Feed extends Component {
             <img
               alt=""
               src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/bearu/heart.png"
+              onClick={handleChangeLikes}
             ></img>
             <img
               alt=""
@@ -138,7 +145,7 @@ class Feed extends Component {
                       <strong>limosum91 </strong>
                       {text.text}
                     </div>
-                    <div>
+                    <div className="newCommentBtn">
                       <img
                         type="button"
                         className="commentDelete"
