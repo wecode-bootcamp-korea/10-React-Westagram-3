@@ -7,7 +7,11 @@ class MainRight extends Component {
       <div className="MainRight_JY">
         <div className="fixRight">
           <div className="rightProfile">
-            <img className="rightProfile-pic" src="/images/JIYUNLEE/me.jpg" />
+            <img
+              className="rightProfile-pic"
+              alt=""
+              src="/images/JIYUNLEE/me.jpg"
+            />
             <p>
               <strong>limosum91</strong>
             </p>
@@ -20,7 +24,7 @@ class MainRight extends Component {
             </div>
             <div className="recommendList">
               <div className="recommendProfile">
-                <img src="/images/JIYUNLEE/tom.jpg" />
+                <img alt="" src="/images/JIYUNLEE/tom.jpg" />
                 <div className="userText">
                   <p className="userid">tomholland2013</p>
                   <p className="secondLine">robertdowneyjr 님 외 1명이...</p>
@@ -29,7 +33,7 @@ class MainRight extends Component {
                 <br></br>
               </div>
               <div className="recommendProfile">
-                <img src="/images/JIYUNLEE/robert.jpg" />
+                <img alt="" src="/images/JIYUNLEE/robert.jpg" />
                 <div className="userText">
                   <p className="userid">robertdowneyjr</p>
                   <p className="secondLine">tomholland2013 님 외 4명이...</p>
@@ -38,7 +42,7 @@ class MainRight extends Component {
                 <br></br>
               </div>
               <div className="recommendProfile">
-                <img src="/images/JIYUNLEE/marvel.jpg" />
+                <img alt="" src="/images/JIYUNLEE/marvel.jpg" />
                 <div className="userText">
                   <p className="userid">marvel</p>
                   <p className="secondLine">tomholland2013 님 외 2명이...</p>
@@ -47,7 +51,7 @@ class MainRight extends Component {
                 <br></br>
               </div>
               <div className="recommendProfile">
-                <img src="/images/JIYUNLEE/avengers.jpg" />
+                <img alt="" src="/images/JIYUNLEE/avengers.jpg" />
                 <div className="userText">
                   <p className="userid">avengers</p>
                   <p className="secondLine">tomholland2013 님 외 1명이...</p>

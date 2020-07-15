@@ -12,35 +12,53 @@ class Login extends Component {
   }
 
   handleEmailChange = (e) => {
-    this.setState({ email: e.target.value });
+    this.setState({
+      email: e.target.value,
+    });
   };
 
   handlePasswordChange = (e) => {
-    this.setState({ password: e.target.value });
+    this.setState({
+      password: e.target.value,
+    });
   };
 
   handleEnterLogin = (e) => {
-    if (this.canBeSubmitted() && e.keyCode === 13) {
+    if (e.keyCode === 13) {
       this.goToMain();
     }
   };
 
-  canBeSubmitted() {
-    const { email, password } = this.state;
-    return email.includes("@") && password.length > 5;
-  }
-
   goToMain() {
+    console.log("onClick");
     console.log(this.state.email);
     console.log(this.state.password);
-    this.props.history.push("/jiyunMain");
+
+    fetch("http://10.58.0.219:8000/user/sign-in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json()) // JSON >>> JS
+      .then((res) => {
+        if (res.access_token) {
+          localStorage.setItem("access_token", res.access_token);
+          alert(`${this.state.email} 님, 로그인 성공!`);
+          this.props.history.push("/jiyunMain");
+        } else {
+          alert("ID와 비밀번호를 확인하세요");
+        }
+      });
   }
 
   render() {
-    const isEnabled = this.canBeSubmitted();
+    const { email, password } = this.state;
+    const isEnabled = email.includes("@") && password.length > 5;
 
     return (
-      <div class="Login_JY">
+      <div className="Login_JY">
         <div className="box">
           <div className="box1">
             <img
@@ -55,11 +73,10 @@ class Login extends Component {
                 value={this.state.email}
                 onChange={this.handleEmailChange}
                 onKeyUp={this.handleEnterLogin}
-                autocomplete="off"
+                autoComplete="off"
               />
               <input
                 type="password"
-                id="inputpw"
                 placeholder="비밀번호"
                 value={this.state.password}
                 onChange={this.handlePasswordChange}
