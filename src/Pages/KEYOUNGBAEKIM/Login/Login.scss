@@ -31,7 +31,20 @@
         border-radius: 3px;
       }
 
-      .loginBtn {
+      .activeLoginBtn {
+        margin-top: 30px;
+        padding: 10px;
+        font-weight: bold;
+        font-size: 16px;
+        color: #ffffff;
+        background-color: #0095f6;
+        border: 1px;
+        border-radius: 5px;
+        pointer-events: auto;
+        cursor: pointer;
+      }
+
+      .disableLoginBtn {
         margin-top: 30px;
         padding: 10px;
         font-weight: bold;
@@ -40,6 +53,7 @@
         background-color: #b2dffc;
         border: 1px;
         border-radius: 5px;
+        pointer-events: none;
       }
     }
 
