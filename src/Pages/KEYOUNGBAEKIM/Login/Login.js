@@ -3,18 +3,35 @@ import "./Login.scss";
 import { withRouter } from "react-router-dom";
 
 class Login extends Component {
-  goToMain = () => {
-    this.props.history.push("/keyoungbaeMain");
-  };
-
   constructor() {
     super();
 
     this.state = {
       email: "",
       password: "",
+      token: "",
     };
   }
+
+  onClick = () => {
+    fetch("http://10.58.4.0:8000/user/in", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+        token: this.state.token,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.token !== null) {
+          sessionStorage.setItem("token", res.token);
+          this.props.history.push("/keyoungbaeMain");
+        } else {
+          alert("로그인 정보가 맞지 않습니다.");
+        }
+      });
+  };
 
   onChange = (e) => {
     this.setState({
@@ -50,7 +67,7 @@ class Login extends Component {
               />
             </div>
             <button
-              onClick={this.goToMain}
+              onClick={this.onClick}
               type="loginBtn"
               className={
                 this.state.email.includes("@") &&
