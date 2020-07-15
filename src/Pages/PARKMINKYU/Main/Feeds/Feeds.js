@@ -9,16 +9,8 @@ class Feeds extends React.Component {
       newReply: "",
       replies: [
         {
-          author: "엘비",
-          text: "hihi",
-        },
-        {
-          author: "민귤",
-          text: "어려워",
-        },
-        {
-          author: "너드",
-          text: "쉬워",
+          author: "",
+          text: "",
         },
       ],
     };
@@ -41,12 +33,14 @@ class Feeds extends React.Component {
 
     this.setState({
       replies: arr,
+      newReply: "",
     });
   };
 
   pressEnter = (e) => {
-    if (e.key === "Enter") {
+    if (e.key === "Enter" && this.state.newReply) {
       this.add();
+      e.target.value = "";
     }
   };
 
