@@ -33,6 +33,17 @@ class Login extends React.Component {
       this.state.password
     );
     this.props.history.push("/parkminkyuMain");
+
+    // 회원가입
+    fetch("http://10.58.0.223:8000/user/signin ", {
+      method: "POST",
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((res) => res.json()) //JSON body -> JS
+      .then((res) => sessionStorage.setItem("access_token", res.access_token));
   };
 
   render() {
