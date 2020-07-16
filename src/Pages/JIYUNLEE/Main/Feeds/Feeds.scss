@@ -152,6 +152,7 @@
         }
 
         .feedContents {
+          margin: 10px 0 0 0;
           .texts {
             .paragraph {
               display: inline-block;
@@ -169,35 +170,41 @@
               padding: 0;
               outline: none;
               border-style: none;
-              background-color: #fafafa;
+              background-color: white;
             }
           }
         }
 
-        .commentsList {
+        .showComments {
           list-style: none;
 
-          .commentsFrame {
+          .commentsList {
             margin: 0;
             padding-inline-start: 0;
             list-style: none;
 
             li {
+              width: 592;
               display: flex;
+              justify-content: space-between;
               align-items: center;
               word-break: break-all;
-              margin-top: 10px;
+              margin-top: 3px;
 
               span {
                 margin-left: 5px;
               }
 
-              .deleteBtn {
-                width: 30px;
+              .commentLikes {
+                width: 12px;
+                height: 12px;
+                margin: 2px;
+              }
+              .commentDelete {
+                width: 12px;
+                margin: 2px;
                 border-style: none;
-                text-align: right;
                 outline: none;
-                color: rgb(192, 192, 192);
               }
             }
           }
@@ -212,7 +219,6 @@
 
         .createComment {
           display: flex;
-          margin: 0 auto;
 
           .inputComment {
             flex-shrink: 0;
@@ -220,6 +226,7 @@
             max-width: 543px;
             min-height: 56px;
             max-height: 80px;
+            margin-right: 20px;
             padding-top: 20px;
             padding-left: 20px;
             font-size: 12px;
@@ -229,12 +236,19 @@
             font-family: Arial, Helvetica, sans-serif;
           }
 
-          .commentBtn {
+          .activateBtn {
             flex-grow: 1;
-            float: right;
-            color: lightblue;
+            color: skyblue;
             border-style: none;
             outline: none;
+            background-color: white;
+          }
+          .btnNotAvailable {
+            flex-grow: 1;
+            color: lightgrey;
+            border-style: none;
+            outline: none;
+            background-color: white;
           }
         }
       }
