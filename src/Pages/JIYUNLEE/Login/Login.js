@@ -11,15 +11,9 @@ class Login extends Component {
     };
   }
 
-  handleEmailChange = (e) => {
+  handleOnChange = (e) => {
     this.setState({
-      email: e.target.value,
-    });
-  };
-
-  handlePasswordChange = (e) => {
-    this.setState({
-      password: e.target.value,
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -34,7 +28,7 @@ class Login extends Component {
     console.log(this.state.email);
     console.log(this.state.password);
 
-    fetch("http://10.58.0.219:8000/user/sign-in", {
+    fetch("http://10.58.5.225:8000/user/sign-in", {
       method: "POST",
       body: JSON.stringify({
         email: this.state.email,
@@ -68,18 +62,20 @@ class Login extends Component {
             />
             <div className="inputLogin">
               <input
+                name="email"
                 type="text"
                 placeholder="전화번호, 사용자 이름 또는 이메일"
                 value={this.state.email}
-                onChange={this.handleEmailChange}
+                onChange={this.handleOnChange}
                 onKeyUp={this.handleEnterLogin}
                 autoComplete="off"
               />
               <input
+                name="password"
                 type="password"
                 placeholder="비밀번호"
                 value={this.state.password}
-                onChange={this.handlePasswordChange}
+                onChange={this.handleOnChange}
                 onKeyUp={this.handleEnterLogin}
               />
               <button
